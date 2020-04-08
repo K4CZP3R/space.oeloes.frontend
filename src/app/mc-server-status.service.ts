@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { ServerStatus } from './server-status';
 
 
@@ -8,12 +8,10 @@ import { ServerStatus } from './server-status';
 })
 export class McServerStatusService {
 
-constructor(
-  private http: HttpClient
+  constructor(
+    private http: HttpClient
   ) { }
-
-
-  getStatus(){
-    return this.http.get<ServerStatus>('https://mcapi.us/server/status?ip=oeloes.space')
+  getStatus() {
+    return this.http.get<ServerStatus>('https://oeloes.space:8001/oeloes.space')
   }
 }

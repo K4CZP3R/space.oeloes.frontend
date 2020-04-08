@@ -1,6 +1,8 @@
 export interface ServerStatus {
+    address: string;
+    online: boolean;
     version: string;
-    players: number;
-    icon: string;
-    hostname: string;
+    current_players: string;
+    latency: number;
+    players: string[];
 }

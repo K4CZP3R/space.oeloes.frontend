@@ -1,11 +1,16 @@
-<div *ngIf="status" class="card mb-3 text-center">
+<div *ngIf="status.online" class="card mb-3 text-center">
     <div class="card-body">
-        <h5 class="card-title ">
-            <img [src]="status.icon"> {{status.hostname}}
-            <span class="badge badge-secondary">{{status.version}}</span>
-        </h5>
+        <h1 class="card-title ">
+            {{status.address}}
+        </h1>
         <p class="card-text">
-            Players online: {{status.players}}
-        </p>
+            <span class="badge badge-warning">Version: {{status.version}}</span> <span
+                class="badge badge-success">Online: {{status.current_players}}</span>
+            <div *ngIf="status.players">
+                <br>Players online:
+                <span class="badge badge-info" *ngFor="let p of status.players">
+                    {{p}}
+                </span>
+            </div>
     </div>
 </div>
