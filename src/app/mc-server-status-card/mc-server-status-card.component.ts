@@ -23,12 +23,10 @@ export class McServerStatusCard implements OnInit{
 
   getData(){
     this.mcServerStatusService.getStatus().subscribe((data: ServerStatus) => this.status = {
-      version: (data as any).version,
-      players: (data as any).players,
-      icon: (data as any).icon,
-      hostname: (data as any).hostname,
-      ping: (data as any).ping
-
+      version: (data as any).server.name,
+      players: (data as any).players.now,
+      icon: (data as any).favicon,
+      hostname: 'oeloes.space'
     });
 
   }

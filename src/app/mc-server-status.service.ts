@@ -14,6 +14,6 @@ constructor(
 
 
   getStatus(){
-    return this.http.get<ServerStatus>('https://mcapi.xdefcon.com/server/oeloes.space/full/json')
+    return this.http.get<ServerStatus>('https://mcapi.us/server/status?ip=oeloes.space')
   }
 }

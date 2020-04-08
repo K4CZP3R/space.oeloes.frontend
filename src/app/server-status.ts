@@ -3,5 +3,4 @@ export interface ServerStatus {
     players: number;
     icon: string;
     hostname: string;
-    ping: number;
 }
