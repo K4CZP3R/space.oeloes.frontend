@@ -1,0 +1,25 @@
+<h1>
+
+    Players</h1>
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th scope="col" sortable="nickname">Nickname</th>
+            <th scope="col" sortable="deaths">Deaths</th>
+            <th scope="col" sortable="game_time">Game time</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let player of players_stats | async">
+            <td>
+                <img [src]="player.profile.head_link" class="mr-2" style="width: 32px">
+                <a [routerLink]="['/player', player.profile.uuid]">{{player.profile.name}}</a>
+            </td>
+            <td>{{player.stats.deaths | number}}</td>
+            <td>{{player.stats.play_time_readable}}</td>
+
+        </tr>
+    </tbody>
+</table>

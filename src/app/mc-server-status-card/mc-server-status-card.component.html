@@ -1,0 +1,11 @@
+<div *ngIf="status" class="card mb-3 text-center">
+    <div class="card-body">
+        <h5 class="card-title ">
+            <img [src]="status.icon"> {{status.hostname}}
+            <span class="badge badge-secondary">{{status.version}}</span>
+        </h5>
+        <p class="card-text">
+            Players online: {{status.players}}
+        </p>
+    </div>
+</div>

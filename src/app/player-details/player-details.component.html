@@ -1,0 +1,33 @@
+<div *ngIf="playerStats" class="card text-white mb-3" style="background-color:black;">
+    <h5 class="card-header text-warning">Player info</h5>
+    <div class="card-body">
+        <h5 class="card-title">
+            <img [src]="playerStats.profile.body_link" class="img-fluid float-left" style="margin-right: 10px;">
+            {{playerStats.profile.name}}
+        </h5>
+        <p class="card-subtitle mb-2 text-muted">
+            Play time: <samp>{{playerStats.stats.play_time_readable}}</samp><br>
+            Deaths: <samp>{{playerStats.stats.deaths}}</samp><br>
+            Jumps: <samp>{{playerStats.stats.jumps}}</samp><br>
+        </p>
+    </div>
+</div>
+
+<table *ngIf="playerStats" class="table table-stripped">
+    <thead>
+        <tr>
+            <th scope="col" >Name</th>
+            <th scope="col" >Mined</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let block of playerStats.stats.mined | keyvalue: valueAscOrder">
+            <td>
+                <img src='https://raw.githubusercontent.com/K4CZP3R/space.oeloes.resources/master/minecraft-assets/{{block.key.substring(10)}}.png' >
+                <a>{{block.key.substring(10)}}</a>
+            </td>
+            <td>{{block.value}}</td>
+        </tr>
+    </tbody>
+</table>
